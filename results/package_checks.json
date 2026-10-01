@@ -1,0 +1,37 @@
+{
+ "what": "checks of the package scripts against the experiment scripts that produced the README numbers (RTX 3060 12 GB, 120 W)",
+ "finetune_vs_experiment_script": {
+  "data": "PHerc1447 w058 + w060 (the recipe-check setting), forward, seed 130697, 32 micro-batches (2 optimiser steps)",
+  "experiment_script": {
+   "tiles": 2712,
+   "loss": 0.6001680083572865
+  },
+  "finetune.py": {
+   "tiles": 2712,
+   "loss": 0.6001686342060566,
+   "peak_gb": 9.0,
+   "saved_config_reverse_layers": false
+  },
+  "finetune.py --ckpt": {
+   "loss": 0.6001684609800577,
+   "peak_gb": 7.0
+  },
+  "finetune.py under an 8.0 GB cap (fallback)": {
+   "switched_to_checkpointing": true,
+   "loss": 0.6001685839146376,
+   "peak_gb": 7.8
+  }
+ },
+ "predict_vs_experiment_script": {
+  "data": "released loo-w062 on a 420 x 840 px window of the w062 text window, forward; interior compared (64 px margin)",
+  "px": 207904,
+  "r": 1.0,
+  "max_abs": 3e-05,
+  "mean_ref": 0.3641,
+  "mean_new": 0.3641
+ },
+ "predict_layers_dir_vs_zarr": {
+  "r_zarr_vs_layers": 1.0,
+  "max_abs_zarr_vs_layers": 0.0
+ }
+}

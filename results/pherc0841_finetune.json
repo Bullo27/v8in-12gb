@@ -1,0 +1,189 @@
+{
+ "plan": "folds, measures and criteria written down before the first fine-tune ran: (1) held-out AUC > zero-shot + 0.02; (2) elongation >= 16; (3) letters legible in the fine-tuned map",
+ "folds": {
+  "A": {
+   "held_out": "auto_grown_...405",
+   "trained_on": [
+    "w00",
+    "auto_grown_...896"
+   ],
+   "tiles": 830,
+   "epochs": 10,
+   "seconds": 3636,
+   "optimizer_steps": 250,
+   "held_out_scores": {
+    "auc": 0.7948,
+    "ap": 0.5948,
+    "ink_frac": 0.227,
+    "raw_r_team": 0.63,
+    "hp_r_team": 0.045,
+    "inked_hp_r": 0.055,
+    "hp_null_max_abs": 0.007,
+    "shape": {
+     "n_letters": 5,
+     "elong_map": 9.8,
+     "elong_labels": 24.54
+    }
+   },
+   "zero_shot_scores": {
+    "auc": 0.8103,
+    "ap": 0.625,
+    "ink_frac": 0.227,
+    "raw_r_team": 0.554,
+    "hp_r_team": 0.021,
+    "inked_hp_r": 0.029,
+    "hp_null_max_abs": 0.005,
+    "shape": {
+     "n_letters": 5,
+     "elong_map": 10.92,
+     "elong_labels": 24.54
+    }
+   }
+  },
+  "B": {
+   "held_out": "w00",
+   "trained_on": [
+    "auto_grown_...405",
+    "auto_grown_...896"
+   ],
+   "tiles": 663,
+   "epochs": 10,
+   "seconds": 2877,
+   "optimizer_steps": 200,
+   "held_out_scores": {
+    "auc": 0.8791,
+    "ap": 0.743,
+    "ink_frac": 0.222,
+    "raw_r_team": 0.641,
+    "hp_r_team": 0.049,
+    "inked_hp_r": 0.053,
+    "hp_null_max_abs": 0.003,
+    "shape": {
+     "n_letters": 7,
+     "elong_map": 11.87,
+     "elong_labels": 19.69
+    }
+   },
+   "zero_shot_scores": {
+    "auc": 0.8374,
+    "ap": 0.6612,
+    "ink_frac": 0.222,
+    "raw_r_team": 0.539,
+    "hp_r_team": 0.025,
+    "inked_hp_r": 0.028,
+    "hp_null_max_abs": 0.004,
+    "shape": {
+     "n_letters": 7,
+     "elong_map": 10.66,
+     "elong_labels": 19.69
+    }
+   }
+  },
+  "C": {
+   "held_out": "auto_grown_...896",
+   "trained_on": [
+    "w00",
+    "auto_grown_...405"
+   ],
+   "tiles": 933,
+   "epochs": 10,
+   "seconds": 4050,
+   "optimizer_steps": 290,
+   "held_out_scores": {
+    "auc": 0.8309,
+    "ap": 0.7383,
+    "ink_frac": 0.323,
+    "raw_r_team": 0.686,
+    "hp_r_team": 0.049,
+    "inked_hp_r": 0.053,
+    "hp_null_max_abs": 0.003,
+    "shape": {
+     "n_letters": 6,
+     "elong_map": 11.3,
+     "elong_labels": 21.85
+    }
+   },
+   "zero_shot_scores": {
+    "auc": 0.8069,
+    "ap": 0.6602,
+    "ink_frac": 0.323,
+    "raw_r_team": 0.6,
+    "hp_r_team": 0.035,
+    "inked_hp_r": 0.043,
+    "hp_null_max_abs": 0.004,
+    "shape": {
+     "n_letters": 6,
+     "elong_map": 11.03,
+     "elong_labels": 21.85
+    }
+   }
+  }
+ },
+ "leak_check": {
+  "method": "neighbour's labels carried to the held-out winding by nearest 3D point (<= 25 vx), map correlated with them; partial r holds the held-out winding's own labels fixed; null = the carried labels shifted by +-40 px at 1/4 scale (+-160 px); computed at 1/4 scale",
+  "B": {
+   "held": "w00",
+   "neighbour": "auto_grown_...896",
+   "carried_px_q": 70092,
+   "median_dist_vx": 9.441867104875257,
+   "zero_shot": {
+    "r_with_neighbour_labels": 0.17587762323970754,
+    "null": [
+     0.044,
+     -0.194,
+     0.224,
+     -0.152
+    ],
+    "r_with_own_labels": 0.3034319465826,
+    "r_own_vs_neighbour_labels": 0.41774367926893796,
+    "partial_r_neighbour_given_own": 0.057,
+    "px": 27362
+   },
+   "finetuned": {
+    "r_with_neighbour_labels": 0.28113205190270324,
+    "null": [
+     0.098,
+     -0.081,
+     0.079,
+     -0.054
+    ],
+    "r_with_own_labels": 0.5498429503848224,
+    "r_own_vs_neighbour_labels": 0.41774367926893796,
+    "partial_r_neighbour_given_own": 0.068,
+    "px": 27362
+   }
+  },
+  "C": {
+   "held": "auto_grown_...896",
+   "neighbour": "w00",
+   "carried_px_q": 108808,
+   "median_dist_vx": 7.371321989486818,
+   "zero_shot": {
+    "r_with_neighbour_labels": 0.3669508215119197,
+    "null": [
+     0.109,
+     -0.005,
+     -0.015,
+     -0.062
+    ],
+    "r_with_own_labels": 0.3859954506701035,
+    "r_own_vs_neighbour_labels": 0.5483236831424299,
+    "partial_r_neighbour_given_own": 0.201,
+    "px": 46183
+   },
+   "finetuned": {
+    "r_with_neighbour_labels": 0.4568172417459561,
+    "null": [
+     0.017,
+     0.05,
+     -0.025,
+     -0.064
+    ],
+    "r_with_own_labels": 0.5109942963988928,
+    "r_own_vs_neighbour_labels": 0.5483236831424299,
+    "partial_r_neighbour_given_own": 0.246,
+    "px": 46183
+   }
+  }
+ }
+}

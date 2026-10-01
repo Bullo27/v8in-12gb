@@ -1,0 +1,97 @@
+{
+ "tool": "auto_order.py (this repo), axis = centroid of the masked scan per z-slab at level 5",
+ "PHerc0841": {
+  "20260220213127-w00": {
+   "auto_order_output": "forward 0.993",
+   "auc_forward": 0.8374,
+   "auc_reverse": 0.5624
+  },
+  "20260220214732-auto_grown_20260220144552896": {
+   "auto_order_output": "forward 0.992",
+   "auc_forward": 0.8069,
+   "auc_reverse": 0.6183
+  },
+  "20260221022814-auto_grown_20260220174252405": {
+   "auto_order_output": "forward 0.991",
+   "auc_forward": 0.8103,
+   "auc_reverse": 0.5857
+  }
+ },
+ "PHerc0841_axis_from_s3_equals_cached_axis": true,
+ "PHerc1447": {
+  "w058": {
+   "our_flip_normals_render": "forward 0.987",
+   "dataset_layers_no_flip": "reverse 0.013"
+  },
+  "w060": {
+   "our_flip_normals_render": "forward 0.986",
+   "dataset_layers_no_flip": "reverse 0.014"
+  },
+  "w062": {
+   "our_flip_normals_render": "forward 0.981",
+   "dataset_layers_no_flip": "reverse 0.019"
+  }
+ },
+ "PHerc1447_forward_vs_reverse": {
+  "what": "base v8-in through predict.py on a 600 x 900 px window of our flip-normals render, both orders; AUC vs the dataset refined labels inside its mask; r with the published v8in.png (dataset layers, model order) on the same pixels",
+  "w058": {
+   "window_rows_cols": [
+    800,
+    1400,
+    1450,
+    2350
+   ],
+   "forward": {
+    "r_with_published_v8in": 0.906,
+    "px": 520087,
+    "auc": 0.8151,
+    "auc_px": 520087
+   },
+   "published_v8in_auc_same_px": 0.8762,
+   "reverse": {
+    "r_with_published_v8in": 0.181,
+    "px": 520087,
+    "auc": 0.7688,
+    "auc_px": 520087
+   }
+  },
+  "w060": {
+   "window_rows_cols": [
+    300,
+    900,
+    1650,
+    2550
+   ],
+   "forward": {
+    "r_with_published_v8in": 0.936,
+    "px": 520087,
+    "auc": 0.7535,
+    "auc_px": 514978
+   },
+   "published_v8in_auc_same_px": 0.7699,
+   "reverse": {
+    "r_with_published_v8in": 0.191,
+    "px": 520087,
+    "auc": 0.5707,
+    "auc_px": 514978
+   }
+  },
+  "w062": {
+   "window_rows_cols": [
+    700,
+    1300,
+    700,
+    1600
+   ],
+   "forward": {
+    "r_with_published_v8in": 0.961,
+    "px": 520087
+   },
+   "reverse": {
+    "r_with_published_v8in": -0.023,
+    "px": 520087
+   }
+  }
+ },
+ "PHerc1447_dataset_layers": "v8-in model card: the PHerc. 1447 surfaces stack the normal the other way, add --reverse"
+}

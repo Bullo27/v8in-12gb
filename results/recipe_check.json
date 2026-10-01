@@ -1,0 +1,52 @@
+{
+ "what": "loo-w062 retrained with the 12 GB recipe (train PHerc1447 w058 + w060), compared on the held-out w062 text window",
+ "window": "rows 1772:3072, cols 1904:4104 of the w062 grid",
+ "training": {
+  "tiles": 2712,
+  "epochs": 10,
+  "micro": 2,
+  "accum": 16,
+  "seed": 130697,
+  "grad_checkpointing": false
+ },
+ "optimizer_steps": 840,
+ "seconds": 11845,
+ "peak_gb_pytorch": 9.0,
+ "gpu": "RTX 3060 12 GB at 120 W",
+ "released_original": {
+  "tiles": 2718,
+  "optimizer_steps": 850,
+  "micro_batch": 4,
+  "accumulation": 8
+ },
+ "correlations": {
+  "px": 2801170,
+  "r_repro_vs_released_ourrender": 0.972,
+  "r_repro_vs_released_published": 0.936,
+  "r_released_ourrender_vs_published": 0.962,
+  "r_base_vs_released_published": 0.877,
+  "r_base_vs_repro": 0.832
+ },
+ "stats": {
+  "released_ourrender": {
+   "mean": 0.277,
+   "std": 0.158,
+   "gt05": 0.1454
+  },
+  "repro": {
+   "mean": 0.301,
+   "std": 0.141,
+   "gt05": 0.1366
+  },
+  "released_published": {
+   "mean": 0.277,
+   "std": 0.157,
+   "gt05": 0.1438
+  },
+  "base_published": {
+   "mean": 0.288,
+   "std": 0.126,
+   "gt05": 0.1028
+  }
+ }
+}
