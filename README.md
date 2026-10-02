@@ -176,6 +176,7 @@ Fold B shows no sign of bleed. In fold C, part of the small gain may come from t
 - One unseen scroll, three segments, one label set. The labels were drawn on a 2.4 µm scan and carried to 9.4 µm, so some misregistration is possible, which would lower every map's AUC.
 - Folds B and C hold out adjacent windings (see the leak check).
 - AUC measures pixel detection, not legibility. Elongation measures shape only where detection is real.
+- Only v8-in and ink_9um were compared. Other 9 µm ink models, such as Reader v2 and Hecate, were not tested.
 - Legibility was judged by eye. The blind rating (a separate model instance shown neutral, shuffled panels; fold A only) is weak evidence: it ranked the known-text control first but rated every panel, that control included, at most 1/5.
 - The 12 GB recipe was checked on one setting (loo-w062). Frozen BatchNorm and the smaller micro-batch could matter more on other data.
 - The order rule assumes that the scroll's long axis runs roughly along z and that its cross-section is roughly round. Where a patch's normals point both ways it says `both`; run both orders there.
