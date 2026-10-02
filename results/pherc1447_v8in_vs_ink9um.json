@@ -1,0 +1,74 @@
+{
+ "what": "PHerc1447 w058 / w060 (in neither model's training set), labelled crops of our flip-normals renders, read forward and reverse; AUC/AP inside the dataset mask.png (inklabels.png > 127 = ink), the same pixels for every map",
+ "caveat": "dataset card: 'Because the renders kept the same UV layout, ink could be re-predicted during editing' (the labels may not be independent of model predictions)",
+ "v8in_released_recipe": {
+  "w058": {
+   "forward_s0": {
+    "auc": 0.8619,
+    "ap": 0.6966,
+    "r_vs_published": 0.9808
+   }
+  },
+  "w060": {
+   "forward_s0": {
+    "auc": 0.805,
+    "ap": 0.6748,
+    "r_vs_published": 0.9658
+   }
+  }
+ },
+ "ink9um": {
+  "w058": {
+   "seed42_075k_forward": {
+    "auc": 0.7372,
+    "ap": 0.5259
+   },
+   "seed42_075k_reverse": {
+    "auc": 0.4809,
+    "ap": 0.2267
+   },
+   "seed43_020k_forward": {
+    "auc": 0.7057,
+    "ap": 0.5059
+   },
+   "seed43_020k_reverse": {
+    "auc": 0.4722,
+    "ap": 0.2241
+   },
+   "mean2_forward": {
+    "auc": 0.7537,
+    "ap": 0.5793
+   },
+   "mean2_reverse": {
+    "auc": 0.4722,
+    "ap": 0.2221
+   }
+  },
+  "w060": {
+   "seed42_075k_forward": {
+    "auc": 0.6459,
+    "ap": 0.4076
+   },
+   "seed42_075k_reverse": {
+    "auc": 0.5083,
+    "ap": 0.2617
+   },
+   "seed43_020k_forward": {
+    "auc": 0.5743,
+    "ap": 0.3448
+   },
+   "seed43_020k_reverse": {
+    "auc": 0.466,
+    "ap": 0.2443
+   },
+   "mean2_forward": {
+    "auc": 0.6301,
+    "ap": 0.4132
+   },
+   "mean2_reverse": {
+    "auc": 0.4821,
+    "ap": 0.2541
+   }
+  }
+ }
+}

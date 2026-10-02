@@ -33,6 +33,7 @@ The ink models read the layers going toward the scroll centre.
   - The stored order is therefore the model's order ("forward") when N points away from the scroll axis.
   - It must be reversed when N points toward the axis.
 - The axis is the centroid of the masked scan in each z-slab, taken from a coarse pyramid level (level 5).
+- ink_9um reads the same order. On PHerc0841 its 14-checkpoint mean scores AUC 0.756-0.813 forward and 0.543-0.660 reversed; on PHerc1447 the mean of its two default checkpoints scores 0.630-0.754 forward and 0.47-0.48 reversed.
 - `auto_order.py` prints the fraction of tifxyz vertices whose normal points outward: forward above 0.7, reverse below 0.3, `both` in between (patches whose normals point both ways).
 
 | winding | render | outward fraction | rule says | measured |
@@ -124,6 +125,11 @@ v8-in was trained on Scroll 1, Scroll 5, PHerc1667, PHerc0139, PHerc0814, PHerc0
 - v8-in detects ink better than ink_9um on all three: AUC +0.024 to +0.051 over the 14-checkpoint mean, +0.060 to +0.089 over a single checkpoint.
 - Its letter-scale structure is weaker (hp r 0.021-0.035 against 0.059-0.078), and its thresholded map is blobs (elongation 10.7-11.0).
 - Averaging v8-in with the ink_9um mean adds a little AUC: 0.816 / 0.860 / 0.812.
+
+**PHerc1447 is in neither model's training set either.** We scored its two labelled windings, w058 and w060, on the same pixels against the refined labels of v8-in's PHerc1447 dataset (our scoring gives the dataset card's numbers for the published v8-in maps, 0.862 / 0.810).
+- On our renders, v8-in scores AUC 0.862 / 0.805.
+- ink_9um scores 0.737 / 0.646 (seed 42, step 75k), or 0.754 / 0.630 as the mean of its two default checkpoints.
+- These labels come with v8-in's own dataset, whereas the PHerc0841 labels were drawn by the team on a 2.4 µm scan before v8-in was released. We give PHerc0841 more weight.
 
 ### Fine-tuned on two windings, read on the third
 
